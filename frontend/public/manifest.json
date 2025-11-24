@@ -1,0 +1,28 @@
+{
+  "name": "PC Media Remote",
+  "short_name": "Media Remote",
+  "start_url": "/controls",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "fullscreen"
+  ],
+  "background_color": "#050607",
+  "theme_color": "#050607",
+  "description": "Securely control Chrome/YouTube or Spotify playback from any browser.",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
