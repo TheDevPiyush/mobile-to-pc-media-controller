@@ -1,4 +1,5 @@
 import os
+import time
 from fastapi import FastAPI, HTTPException, Query
 import ctypes
 from enum import IntEnum
@@ -157,14 +158,20 @@ async def mute_toggle(passcode: str = Query(...)):
 @app.get("/volume-up")
 async def volume_up(passcode: str = Query(...)):
     require_passcode(passcode)
-    media_key(VK_VOLUME_UP)
+    for _ in range(1, 3):
+        media_key(VK_VOLUME_UP)
+        print(f"Volume up {_}")
+        time.sleep(0.1)
     return {"action": "volume_up", "success": True}
 
 
 @app.get("/volume-down")
 async def volume_down(passcode: str = Query(...)):
     require_passcode(passcode)
-    media_key(VK_VOLUME_DOWN)
+    for _ in range(1, 3):
+        media_key(VK_VOLUME_DOWN)
+        print(f"Volume down {_}")
+        time.sleep(0.1)
     return {"action": "volume_down", "success": True}
 
 
